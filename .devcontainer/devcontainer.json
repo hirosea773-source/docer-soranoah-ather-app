@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-dev",
+  "name": "dev-base",
 
   "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
 
@@ -9,8 +9,12 @@
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
         "bradlc.vscode-tailwindcss",
-        "ms-azuretools.vscode-docker"
+        "Continue.continue"
       ]
     }
-  }
+  },
+
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ]
 }
