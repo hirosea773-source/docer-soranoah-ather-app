@@ -1,20 +1,31 @@
 {
-  "name": "dev-base",
+  "name": "soranoah-dev",
 
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  "remoteUser": "node",
+
+  "workspaceFolder": "/workspaces/app",
+
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/app,type=bind",
+
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
 
   "customizations": {
     "vscode": {
       "extensions": [
+        "ms-azuretools.vscode-docker",
+        "ms-vscode-remote.remote-containers",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "bradlc.vscode-tailwindcss",
-        "Continue.continue"
+        "supabase.vscode-supabase-extension"
       ]
     }
   },
 
-  "mounts": [
-    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
-  ]
+  "postCreateCommand": "npm install"
 }
