@@ -1,6 +1,5 @@
 import { db } from "@/db";
 import { todos } from "@/db/schema";
-
 import { addTodo } from "./actions";
 
 export default async function TodosPage() {
