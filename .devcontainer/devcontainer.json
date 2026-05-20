@@ -7,6 +7,8 @@
 
   "remoteUser": "node",
 
+  "runArgs": ["--group-add", "1001"],
+
   "workspaceFolder": "/workspaces/app",
 
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/app,type=bind",
