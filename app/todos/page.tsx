@@ -1,45 +1,22 @@
-import { db } from "@/db";
-import { todos } from "@/db/schema";
-import { addTodo } from "./actions";
+"use client";
 
-export default async function TodosPage() {
-  const data = await db
-    .select()
-    .from(todos);
+import { createClient } from "@/lib/supabase/client";
+import { useEffect } from "react";
 
-  return (
-    <main className="p-10 flex flex-col gap-4 max-w-md">
-      <h1 className="text-2xl font-bold">
-        Todos
-      </h1>
+export default function TodosPage() {
+  useEffect(() => {
+    const check = async () => {
+      const supabase = createClient();
 
-      <form
-        action={addTodo}
-        className="flex flex-col gap-4"
-      >
-        <input
-          name="title"
-          className="border p-2"
-          placeholder="todo"
-        />
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
 
-        <button
-          className="bg-black text-white p-2 rounded"
-        >
-          Add Todo
-        </button>
-      </form>
+      console.log(session);
+    };
 
-      <div className="flex flex-col gap-2">
-        {data?.map((todo) => (
-          <div
-            key={todo.id}
-            className="border p-2 rounded"
-          >
-            {todo.title}
-          </div>
-        ))}
-      </div>
-    </main>
-  );
+    check();
+  }, []);
+
+  return <div>protected page</div>;
 }

@@ -1,46 +1,41 @@
 "use client";
 
 import { useState } from "react";
-import { supabase } from "@/lib/supabase/client";
+import { createClient } from "@/lib/supabase/client";
 
 export default function SignupPage() {
+  const supabase = createClient();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignup = async () => {
-    const { error } = await supabase.auth.signUp({
+  const signup = async () => {
+    await supabase.auth.signUp({
       email,
       password,
     });
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
-    if (error) {
-      alert(error.message);
-      return;
-    }
-
-    alert("signup success");
+    window.location.href = "/todos";
   };
 
   return (
-    <main className="p-10 flex flex-col gap-4 max-w-sm">
+    <main className="p-10 flex flex-col gap-4">
       <input
-        className="border p-2"
         placeholder="email"
+        className="border p-2"
         onChange={(e) => setEmail(e.target.value)}
       />
 
       <input
-        className="border p-2"
         type="password"
         placeholder="password"
+        className="border p-2"
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <button
-        className="bg-black text-white p-2 rounded"
-        onClick={handleSignup}
-      >
-        Sign Up
+      <button className="border p-2" onClick={signup}>
+        signup
       </button>
     </main>
   );
