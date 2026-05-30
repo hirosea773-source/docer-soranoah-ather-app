@@ -11,38 +11,46 @@ test.describe("Todo App", () => {
 
   test("Todoを追加できること", async ({ page }) => {
     await page.goto("http://localhost:3000/todos");
-    await page.locator("[data-testid=\"new-todo-input\"]").fill("新しいTodo");
-    await page.locator("[data-testid=\"add-todo-button\"]").click();
-    await expect(page.locator("[data-testid^=\"todo-item-\"]")).toContainText("新しいTodo");
+    await page.locator('[data-testid="new-todo-input"]').fill("新しいTodo");
+    await page.locator('[data-testid="add-todo-button"]').click();
+    await expect(page.locator('[data-testid^="todo-item-"]')).toContainText(
+      "新しいTodo",
+    );
   });
 
   test("Todoを完了/未完了にできること", async ({ page }) => {
     await page.goto("http://localhost:3000/todos");
-    await page.locator("[data-testid=\"new-todo-input\"]").fill("完了テストTodo");
-    await page.locator("[data-testid=\"add-todo-button\"]").click();
+    await page.locator('[data-testid="new-todo-input"]').fill("完了テストTodo");
+    await page.locator('[data-testid="add-todo-button"]').click();
 
-    const todoItem = page.locator("[data-testid^=\"todo-item-\"]", { hasText: "完了テストTodo" });
-    const todoId = (await todoItem.getAttribute("data-testid"))?.replace("todo-item-", "");
+    const todoItem = page.locator('[data-testid^="todo-item-"]', {
+      hasText: "完了テストTodo",
+    });
+    await expect(
+      todoItem.locator('[data-testid^="todo-checkbox-"]'),
+    ).not.toBeChecked();
 
-    await expect(todoItem.locator("[data-testid^=\"todo-checkbox-\"]")).not.toBeChecked();
+    await todoItem.locator('[data-testid^="todo-checkbox-"]').click();
+    await expect(
+      todoItem.locator('[data-testid^="todo-checkbox-"]'),
+    ).toBeChecked();
 
-    await todoItem.locator("[data-testid^=\"todo-checkbox-\"]").click();
-    await expect(todoItem.locator("[data-testid^=\"todo-checkbox-\"]")).toBeChecked();
-
-    await todoItem.locator("[data-testid^=\"todo-checkbox-\"]").click();
-    await expect(todoItem.locator("[data-testid^=\"todo-checkbox-\"]")).not.toBeChecked();
+    await todoItem.locator('[data-testid^="todo-checkbox-"]').click();
+    await expect(
+      todoItem.locator('[data-testid^="todo-checkbox-"]'),
+    ).not.toBeChecked();
   });
 
   test("Todoを削除できること", async ({ page }) => {
     await page.goto("http://localhost:3000/todos");
-    await page.locator("[data-testid=\"new-todo-input\"]").fill("削除テストTodo");
-    await page.locator("[data-testid=\"add-todo-button\"]").click();
+    await page.locator('[data-testid="new-todo-input"]').fill("削除テストTodo");
+    await page.locator('[data-testid="add-todo-button"]').click();
 
-    const todoItem = page.locator("[data-testid^=\"todo-item-\"]", { hasText: "削除テストTodo" });
-    const todoId = (await todoItem.getAttribute("data-testid"))?.replace("todo-item-", "");
-
+    const todoItem = page.locator('[data-testid^="todo-item-"]', {
+      hasText: "削除テストTodo",
+    });
     await expect(todoItem).toBeVisible();
-    await todoItem.locator("[data-testid^=\"delete-todo-button-\"]").click();
+    await todoItem.locator('[data-testid^="delete-todo-button-"]').click();
     await expect(todoItem).not.toBeVisible();
   });
 });

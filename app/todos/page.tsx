@@ -12,7 +12,7 @@ import {
 } from "@/src/actions/todo";
 
 export default async function TodosPage() {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const {
     data: { user },
@@ -60,7 +60,7 @@ export default async function TodosPage() {
               <Checkbox
                 id={`todo-${todo.id}`}
                 checked={todo.completed}
-                onCheckedChange={async (checked) => {
+                onCheckedChange={async (checked: boolean | "indeterminate") => {
                   "use server";
                   await toggleTodo(todo.id, checked as boolean);
                 }}
