@@ -1,5 +1,13 @@
 # AGENTS.md
 
+## OpenCode Rules
+
+- デフォルトはレビューのみ
+- ファイル変更前に確認を取る
+- 読み取り専用を優先する
+- 差分のみ出力する
+- 長大なコード全文を出力しない
+
 ## Stack
 
 - Next.js App Router

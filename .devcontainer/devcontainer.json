@@ -28,6 +28,9 @@
       ]
     }
   },
-
-  "postCreateCommand": "npm install"
+  "remoteEnv": {
+    "GEMINI_API_KEY": "${localEnv:GEMINI_API_KEY}",
+    "GOOGLE_GENERATIVE_AI_API_KEY": "${localEnv:GEMINI_API_KEY}"
+  },
+  "postCreateCommand": "npm install && npm i -g opencode-ai@latest"
 }

@@ -1,0 +1,390 @@
+# ==========================================================
+
+# Project Rules
+
+# Next.js + Supabase + Drizzle + Playwright + Docker
+
+# ==========================================================
+
+## Language
+
+- 回答は日本語で行う
+- 作業説明は日本語で行う
+- コードコメントは日本語で記述する
+- エラーメッセージの解説も日本語で行う
+
+---
+
+## Response Format
+
+作業開始前に必ず以下を出力する
+
+### 使用ツール/サービス
+
+例
+
+- Next.js
+- Supabase
+- Drizzle
+- Docker
+- Playwright
+
+### 編集対象
+
+例
+
+- src/actions/todo.ts
+- src/components/todo-list.tsx
+
+### 作業内容
+
+変更内容を簡潔に説明
+
+---
+
+## Planning
+
+- 実装前に必ず計画を作成する
+- 計画を確認してから実装する
+- 不明点は推測しない
+- 必ず既存コードを確認する
+- 既存設計を優先する
+- 勝手なリファクタは禁止
+
+---
+
+## File Safety
+
+編集前に必ず対象ファイルを確認する
+
+禁止
+
+- 関係ないファイルの編集
+- 大規模リネーム
+- 不要なフォルダ作成
+- 不要な依存追加
+
+---
+
+## Security
+
+絶対に表示しない
+
+- .env
+- .env.local
+- API Keys
+- Access Tokens
+- JWT
+- Service Role Key
+- Cookie情報
+- 個人情報
+
+絶対にコミットしない
+
+- .env\*
+- secrets
+- credentials
+
+---
+
+## Git Rules
+
+実行禁止
+
+git reset --hard
+
+git clean -fd
+
+git push --force
+
+git rebase --onto
+
+git branch -D
+
+実行前に確認必須
+
+git checkout
+
+git switch
+
+git merge
+
+---
+
+## Docker Rules
+
+実行禁止
+
+docker system prune -a
+
+docker volume prune
+
+docker volume rm
+
+docker network prune
+
+docker compose down -v
+
+Docker関連は必ず事前確認を行う
+
+---
+
+## Database Rules
+
+対象
+
+- Supabase
+- PostgreSQL
+- Drizzle
+
+禁止
+
+- データ削除
+- DROP TABLE
+- DROP SCHEMA
+- RLS削除
+- Auth削除
+
+Migrationを優先する
+
+直接DB変更は禁止
+
+---
+
+## Supabase Rules
+
+現在の構成
+
+手動確認
+
+NEXT_PUBLIC_SUPABASE_URL=http://localhost:54321
+
+Playwright実行時
+
+NEXT_PUBLIC_SUPABASE_URL=http://supabase_kong_soranoah-authr-app:8000
+
+禁止
+
+- service_role利用
+- RLS無効化
+- anon権限拡大
+
+---
+
+## Next.js Rules
+
+利用構成
+
+- App Router
+- TypeScript
+- Server Actions
+
+推奨
+
+- Server Components優先
+- Client Component最小化
+- any禁止
+- 型安全優先
+
+禁止
+
+- pages Router追加
+- 不要なuseEffect
+- 不要な状態管理
+
+---
+
+## Drizzle Rules
+
+優先
+
+- schema.ts
+- migration
+- db client
+
+禁止
+
+- SQL直書き乱用
+- 型無視
+
+---
+
+## UI Rules
+
+目的
+
+公開可能品質のUI
+
+必須
+
+- レスポンシブ対応
+- ダークモード考慮
+- アクセシビリティ考慮
+- Loading状態
+- Empty状態
+- Error状態
+
+禁止
+
+- テキストだけのUI
+- 情報過密
+- 固定幅レイアウト
+
+---
+
+## Design Rules
+
+優先順位
+
+1. 情報設計
+2. 操作性
+3. 一貫性
+4. 見た目
+
+UI変更時は確認
+
+- Hierarchy
+- Spacing
+- CTA
+- Density
+- Consistency
+
+---
+
+## Playwright Rules
+
+変更後は確認
+
+優先順
+
+1. Type Check
+2. Lint
+3. Build
+4. Playwright
+
+実行例
+
+npm run lint
+
+npm run build
+
+npx playwright test
+
+---
+
+## Implementation Rules
+
+新規ファイル作成時
+
+必ず先にコマンドを提示
+
+例
+
+mkdir -p src/actions
+
+touch src/actions/todo.ts
+
+追加場所を明示
+
+例
+
+app/page.tsx
+
+以下の直後に追加
+
+export default function Home()
+
+---
+
+## Cost Optimization
+
+API利用を最小化
+
+優先
+
+- 一括調査
+- 一括修正
+- 一括提案
+
+禁止
+
+- 無意味な再読込
+- 同一ファイルの連続解析
+- 長文ループ
+
+---
+
+## Completion Checklist
+
+完了時に必ず出力
+
+### 変更ファイル
+
+一覧表示
+
+### 実行コマンド
+
+一覧表示
+
+### 動作確認方法
+
+一覧表示
+
+### 残課題
+
+存在する場合のみ表示
+
+---
+
+## Agent Behavior
+
+優先順位
+
+1. 安全性
+2. 保守性
+3. 型安全
+4. コスト効率
+5. 開発速度
+
+常に最善案を1つ提示する
+
+複数案提示は要求時のみ
+
+---
+
+## Context Management
+
+コンテキストが肥大化した場合
+
+- 要約を作成する
+- 引き継ぎ内容を作成する
+- 新規チャット移行を提案する
+
+---
+
+## Current Project Status
+
+現在の実装状況
+
+完了
+
+- Next.js App Router
+- Docker
+- DevContainer
+- Supabase Local
+- Auth
+- Middleware保護
+- RLS
+- Drizzle
+- Migration
+- Playwright基盤
+
+現在作業中
+
+- Todo一覧UI
+- Todo追加
+- Todo削除
+- Todo完了切替
+- Playwright CRUD
+
+この構成を前提に作業する
