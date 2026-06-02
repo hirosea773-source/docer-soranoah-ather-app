@@ -7,7 +7,12 @@
 
   "remoteUser": "node",
 
-  "runArgs": ["--group-add", "1001"],
+  "runArgs": [
+  "--group-add",
+  "1001",
+  "--dns=1.1.1.1",
+  "--dns=8.8.8.8"
+],
 
   "workspaceFolder": "/workspaces/app",
 
