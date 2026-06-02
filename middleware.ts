@@ -11,39 +11,16 @@ export async function middleware(request: NextRequest) {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
-        get(name: string) {
-          return request.cookies.get(name)?.value;
+        getAll() {
+          return request.cookies.getAll();
         },
-
-        set(name: string, value: string) {
-          request.cookies.set({
-            name,
-            value,
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value, options }) => {
+            request.cookies.set(name, value, options as any);
           });
-
-          response = NextResponse.next({
-            request,
-          });
-
-          response.cookies.set({
-            name,
-            value,
-          });
-        },
-
-        remove(name: string) {
-          request.cookies.set({
-            name,
-            value: "",
-          });
-
-          response = NextResponse.next({
-            request,
-          });
-
-          response.cookies.set({
-            name,
-            value: "",
+          response = NextResponse.next({ request });
+          cookiesToSet.forEach(({ name, value, options }) => {
+            response.cookies.set(name, value, options as any);
           });
         },
       },
@@ -51,12 +28,10 @@ export async function middleware(request: NextRequest) {
   );
 
   const {
-    data: { session },
-  } = await supabase.auth.getSession();
+    data: { user },
+  } = await supabase.auth.getUser();
 
-  console.log("MIDDLEWARE SESSION", session);
-
-  if (!session && request.nextUrl.pathname.startsWith("/todos")) {
+  if (!user && request.nextUrl.pathname.startsWith("/todos")) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 

@@ -17,6 +17,11 @@ export default function LoginPage() {
       password,
     });
 
+    if (result.error) {
+      alert(result.error.message);
+      return;
+    }
+
     console.log("LOGIN RESULT", result);
 
     window.location.href = "/todos";
@@ -33,6 +38,7 @@ export default function LoginPage() {
     console.log("SIGNUP RESULT", result);
 
     if (result.error) {
+      alert(result.error.message);
       return;
     }
 
@@ -45,13 +51,17 @@ export default function LoginPage() {
     <main className="p-10">
       <h1>login</h1>
 
+      <label htmlFor="email">メールアドレス</label>
       <input
+        id="email"
         placeholder="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
 
+      <label htmlFor="password">パスワード</label>
       <input
+        id="password"
         placeholder="password"
         type="password"
         value={password}
@@ -59,11 +69,11 @@ export default function LoginPage() {
       />
 
       <button type="button" onClick={login}>
-        login
+        ログイン
       </button>
 
       <button type="button" onClick={signup}>
-        signup
+        サインアップ
       </button>
     </main>
   );
