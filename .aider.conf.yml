@@ -1,0 +1,11 @@
+model: gemini/gemini-3.5-flash
+
+auto-commits: false
+dirty-commits: false
+show-diffs: true
+gitignore: true
+analytics: false
+
+read:
+  - AGENTS.md
+a
