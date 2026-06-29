@@ -8,18 +8,20 @@
   "remoteUser": "node",
 
   "runArgs": [
-  "--group-add",
-  "1001",
-  "--dns=1.1.1.1",
-  "--dns=8.8.8.8"
-],
+    "--group-add",
+    "1001",
+    "--dns=1.1.1.1",
+    "--dns=8.8.8.8",
+    "--add-host=host.docker.internal:host-gateway"
+  ],
 
   "workspaceFolder": "/workspaces/app",
 
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/app,type=bind",
 
   "mounts": [
-    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+    "source=playwright-cache,target=/home/node/.cache/ms-playwright,type=volume"
   ],
 
   "customizations": {
@@ -29,7 +31,8 @@
         "ms-vscode-remote.remote-containers",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "supabase.vscode-supabase-extension"
+        "supabase.vscode-supabase-extension",
+        "saoudrizwan.claude-dev"
       ]
     }
   },
@@ -37,5 +40,5 @@
     "GEMINI_API_KEY": "${localEnv:GEMINI_API_KEY}",
     "GOOGLE_GENERATIVE_AI_API_KEY": "${localEnv:GEMINI_API_KEY}"
   },
-  "postCreateCommand": "npm install && npm i -g opencode-ai@latest"
+  "postCreateCommand": "npm ci && npm i -g opencode-ai@latest"
 }

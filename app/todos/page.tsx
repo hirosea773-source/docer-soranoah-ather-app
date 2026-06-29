@@ -2,14 +2,8 @@ import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
-import {
-  getTodos,
-  createTodo,
-  deleteTodo,
-  toggleTodo,
-} from "@/src/actions/todo";
+import { getTodos, createTodo } from "@/src/actions/todo";
+import { TodoList } from "@/components/todo-list";
 
 export default async function TodosPage() {
   const supabase = await createClient();
@@ -32,7 +26,8 @@ export default async function TodosPage() {
         action={async (formData: FormData) => {
           "use server";
           const title = formData.get("title") as string;
-          await createTodo(title, user.id);
+          if (!title || title.trim() === "") return;
+          await createTodo(title);
         }}
         className="flex gap-2 mb-4"
       >
@@ -49,47 +44,7 @@ export default async function TodosPage() {
         </Button>
       </form>
 
-      <ul>
-        {todos.map((todo) => (
-          <li
-            key={todo.id}
-            className="flex items-center justify-between bg-gray-100 p-3 rounded mb-2 dark:bg-gray-700"
-            data-testid={`todo-item-${todo.id}`}
-          >
-            <div className="flex items-center">
-              <Checkbox
-                id={`todo-${todo.id}`}
-                checked={todo.completed}
-                onCheckedChange={async (checked: boolean | "indeterminate") => {
-                  "use server";
-                  await toggleTodo(todo.id, checked as boolean);
-                }}
-                className="mr-3 w-5 h-5 dark:bg-gray-600 dark:border-gray-500"
-                data-testid={`todo-checkbox-${todo.id}`}
-              />
-              <Label
-                htmlFor={`todo-${todo.id}`}
-                className={`text-lg dark:text-white ${
-                  todo.completed ? "line-through text-gray-500" : ""
-                }`}
-              >
-                {todo.title}
-              </Label>
-            </div>
-            <Button
-              variant="destructive"
-              size="sm"
-              onClick={async () => {
-                "use server";
-                await deleteTodo(todo.id);
-              }}
-              data-testid={`delete-todo-button-${todo.id}`}
-            >
-              削除
-            </Button>
-          </li>
-        ))}
-      </ul>
+      <TodoList initialTodos={todos} />
     </div>
   );
 }

@@ -2,10 +2,13 @@ import { test, expect } from "@playwright/test";
 
 test.describe("Todo App", () => {
   test.beforeEach(async ({ page }) => {
+    const email = `todo-user-${Date.now()}-${Math.floor(Math.random() * 1000)}@example.com`;
+    const password = "password123";
+
     await page.goto("http://localhost:3000/login");
-    await page.getByLabel("メールアドレス").fill("test@example.com");
-    await page.getByLabel("パスワード").fill("password");
-    await page.getByRole("button", { name: "ログイン" }).click();
+    await page.getByPlaceholder("email").fill(email);
+    await page.getByPlaceholder("password").fill(password);
+    await page.getByRole("button", { name: "サインアップ" }).click();
     await page.waitForURL("http://localhost:3000/todos");
   });
 

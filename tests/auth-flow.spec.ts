@@ -19,13 +19,12 @@ test("signup login flow", async ({ page }) => {
   await page.getByPlaceholder("email").fill(email);
   await page.getByPlaceholder("password").fill(password);
 
-  await page.getByRole("button", { name: "signup" }).click();
-
-  await page.waitForTimeout(3000);
+  await page.getByRole("button", { name: "サインアップ" }).click();
+  await page.waitForURL(/todos/); // todosページへのリダイレクトを待機
 
   console.log("CURRENT URL:", page.url());
 
   await expect(page).toHaveURL(/todos/);
 
-  await expect(page.locator("body")).toContainText("protected");
+  await expect(page.locator("body")).toContainText("Todo リスト");
 });

@@ -1,6 +1,37 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## Development
+
+### Dev Container再構築後の確認手順
+
+Dev Containerを再構築（Rebuild Container）後、以下の手順で動作確認を行ってください。
+
+1. **`host.docker.internal` の解決確認**:
+   Dev Containerのターミナルで以下のコマンドを実行し、`host.docker.internal`がホストのIPアドレスに解決されることを確認します。
+   ```bash
+   ping host.docker.internal
+   ```
+   または
+   ```bash
+   getent hosts host.docker.internal
+   ```
+
+2. **Supabase URLの設定確認**:
+   `playwright.config.ts` で設定した `NEXT_PUBLIC_SUPABASE_URL` が正しく `http://host.docker.internal:54321` を指していることを確認します。Playwrightテストを実行する際に、このURLが使用されます。
+
+3. **アプリケーションの起動と動作確認**:
+   アプリケーションを起動し、Supabaseとの連携（例: ログイン、Todoリストの操作）が正常に機能することを確認します。
+   ```bash
+   npm run dev
+   ```
+
+4. **Playwrightテストの実行**:
+   Playwrightテストを実行し、エラーなく完了することを確認します。これにより、PlaywrightがSupabaseのURLに正しく接続できるかを確認できます。
+   ```bash
+   npx playwright test
+   ```
+
+### Getting Started
 
 First, run the development server:
 

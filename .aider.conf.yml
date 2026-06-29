@@ -1,4 +1,6 @@
-model: gemini/gemini-3.5-flash
+model: gemini/gemini-2.5-flash
+
+chat-mode: diff
 
 auto-commits: false
 dirty-commits: false
@@ -6,6 +8,19 @@ show-diffs: true
 gitignore: true
 analytics: false
 
+cache-prompts: true
+map-refresh: files
+subtree-only: true
+
+auto-lint: false
+auto-test: false
+
+lint-cmd: npm run lint
+test-cmd: npm run build
+
 read:
   - AGENTS.md
-a
+  - CONVENTIONS.md
+
+input-history-file: .aider/state/input.history
+chat-history-file: .aider/state/chat.history.md
