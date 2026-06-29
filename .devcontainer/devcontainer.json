@@ -8,6 +8,7 @@
   "remoteUser": "node",
 
   "runArgs": [
+    "--shm-size=1g",
     "--group-add",
     "1001",
     "--dns=1.1.1.1",
