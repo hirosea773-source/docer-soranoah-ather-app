@@ -96,9 +96,6 @@ export function TodoList({ initialTodos }: TodoListProps) {
                     });
                     handleToggle(todo.id, checked === true);
                   }}
-                  onClick={() => console.log("Checkbox clicked!")}
-                  onKeyDown={(e) => console.log("Checkbox keydown:", e.key)}
-                  onKeyUp={(e) => console.log("Checkbox keyup:", e.key)}
                   className="mr-3 w-5 h-5 dark:bg-gray-600 dark:border-gray-500"
                   data-testid={`todo-checkbox-${todo.id}`}
                 />

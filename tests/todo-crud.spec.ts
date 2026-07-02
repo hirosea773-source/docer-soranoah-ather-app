@@ -5,9 +5,6 @@ test.describe("Todo CRUD Flow", () => {
   const password = "password123";
 
   test.beforeEach(async ({ page }) => {
-    page.on("console", (msg) => {
-      console.log("BROWSER LOG:", msg.text());
-    });
 
     email = `test-todo-${Date.now()}-${Math.random()
       .toString(36)
@@ -34,6 +31,10 @@ test.describe("Todo CRUD Flow", () => {
     await page.getByTestId("new-todo-input").fill(todoTitle);
     await page.getByTestId("add-todo-button").click();
 
+    // フォームの送信が完了してインプットがクリアされるのを待つ
+    await expect(page.getByTestId("new-todo-input")).toHaveValue("");
+    await page.waitForTimeout(500);
+
     const todoItem = page.locator(`li:has-text("${todoTitle}")`);
     await expect(todoItem).toBeVisible();
 
@@ -46,26 +47,20 @@ test.describe("Todo CRUD Flow", () => {
     await expect(todoCheckbox).toHaveAttribute("aria-checked", "false");
     await expect(todoLabel).not.toHaveClass(/line-through/);
 
-    // Diagnostic: Check if keyboard events reach the component
+    // Todoを完了状態にする
     await todoCheckbox.focus();
-    const keydownPromise1 = page.waitForEvent('console', { predicate: msg => msg.text().includes('Checkbox keydown: Space') });
-    const keyupPromise1 = page.waitForEvent('console', { predicate: msg => msg.text().includes('Checkbox keyup: Space') });
+    await expect(todoCheckbox).toBeFocused();
     await page.keyboard.press("Space");
-    await expect(keydownPromise1).resolves.toBeDefined();
-    await expect(keyupPromise1).resolves.toBeDefined();
 
     await expect(todoCheckbox).toHaveAttribute("aria-checked", "true", {
       timeout: 10000,
     });
     await expect(todoLabel).toHaveClass(/line-through/, { timeout: 10000 });
 
-    // Diagnostic: Check if keyboard events reach the component for the second toggle
+    // Todoを未完了状態にする
     await todoCheckbox.focus();
-    const keydownPromise2 = page.waitForEvent('console', { predicate: msg => msg.text().includes('Checkbox keydown: Space') });
-    const keyupPromise2 = page.waitForEvent('console', { predicate: msg => msg.text().includes('Checkbox keyup: Space') });
+    await expect(todoCheckbox).toBeFocused();
     await page.keyboard.press("Space");
-    await expect(keydownPromise2).resolves.toBeDefined();
-    await expect(keyupPromise2).resolves.toBeDefined();
 
     await expect(todoCheckbox).toHaveAttribute("aria-checked", "false", {
       timeout: 10000,
