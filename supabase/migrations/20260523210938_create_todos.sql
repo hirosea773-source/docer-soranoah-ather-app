@@ -1,7 +1,6 @@
-drop policy if exists "Users can read own todos" on public.todos;
-drop policy if exists "Users can insert own todos" on public.todos;
-drop policy if exists "Users can update own todos" on public.todos;
-drop policy if exists "Users can delete own todos" on public.todos;
+-- 古いmigrationで作成されたbigint版todosを削除し、uuid版の正しい定義で再作成する
+-- このmigrationはプロトタイプ段階のローカル/CI環境向けで、既存Todoデータの保持は前提にしない
+drop table if exists public.todos cascade;
 
 create table if not exists public.todos (
   id uuid primary key default gen_random_uuid(),
