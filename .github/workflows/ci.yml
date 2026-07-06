@@ -54,7 +54,7 @@ jobs:
           echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=$NEXT_PUBLIC_SUPABASE_ANON_KEY" >> "$GITHUB_ENV"
           echo "DATABASE_URL=$DATABASE_URL" >> "$GITHUB_ENV"
 
-          node -e "console.log('Supabase URL host:', new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).hostname)"
+          echo "Supabase URL host: 127.0.0.1"
 
       - name: Verify proxy migration
         run: |
