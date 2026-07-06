@@ -14,11 +14,6 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
-    env:
-      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.CI_SUPABASE_URL }}
-      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.CI_SUPABASE_ANON_KEY }}
-      DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:54322/postgres
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -31,6 +26,36 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: 2.109.0
+
+      - name: Start Supabase
+        run: |
+          supabase start
+          echo "NEXT_PUBLIC_SUPABASE_URL=$(supabase status -o json | jq -r '.api_url')" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=$(supabase status -o json | jq -r '.anon_key')" >> $GITHUB_ENV
+          echo "DATABASE_URL=$(supabase status -o json | jq -r '.db_url')" >> $GITHUB_ENV
+
+      - name: Verify Environment Variables
+        run: |
+          if [ -n "$NEXT_PUBLIC_SUPABASE_URL" ]; then
+            echo "NEXT_PUBLIC_SUPABASE_URL is set"
+          else
+            echo "NEXT_PUBLIC_SUPABASE_URL is EMPTY" && exit 1
+          fi
+          if [ -n "$NEXT_PUBLIC_SUPABASE_ANON_KEY" ]; then
+            echo "NEXT_PUBLIC_SUPABASE_ANON_KEY is set"
+          else
+            echo "NEXT_PUBLIC_SUPABASE_ANON_KEY is EMPTY" && exit 1
+          fi
+          if [ -n "$DATABASE_URL" ]; then
+            echo "DATABASE_URL is set"
+          else
+            echo "DATABASE_URL is EMPTY" && exit 1
+          fi
 
       - name: Verify proxy migration
         run: |
@@ -46,15 +71,9 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.CI_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.CI_SUPABASE_ANON_KEY }}
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
         run: npm run test:e2e
-        env:
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.CI_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.CI_SUPABASE_ANON_KEY }}
