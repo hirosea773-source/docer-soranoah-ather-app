@@ -89,7 +89,12 @@ export function TodoList({ initialTodos }: TodoListProps) {
                   checked={todo.completed}
                   disabled={isPending}
                   onCheckedChange={(checked) => {
-                    handleToggle(todo.id, checked as boolean);
+                    console.log("checkbox changed:", {
+                      id: todo.id,
+                      checked,
+                      nextCompleted: checked === true,
+                    });
+                    handleToggle(todo.id, checked === true);
                   }}
                   className="mr-3 w-5 h-5 dark:bg-gray-600 dark:border-gray-500"
                   data-testid={`todo-checkbox-${todo.id}`}
