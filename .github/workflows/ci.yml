@@ -35,27 +35,24 @@ jobs:
       - name: Start Supabase
         run: |
           supabase start
-          echo "NEXT_PUBLIC_SUPABASE_URL=$(supabase status -o json | jq -r '.api_url')" >> $GITHUB_ENV
-          echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=$(supabase status -o json | jq -r '.anon_key')" >> $GITHUB_ENV
-          echo "DATABASE_URL=$(supabase status -o json | jq -r '.db_url')" >> $GITHUB_ENV
 
-      - name: Verify Environment Variables
-        run: |
-          if [ -n "$NEXT_PUBLIC_SUPABASE_URL" ]; then
-            echo "NEXT_PUBLIC_SUPABASE_URL is set"
-          else
-            echo "NEXT_PUBLIC_SUPABASE_URL is EMPTY" && exit 1
-          fi
-          if [ -n "$NEXT_PUBLIC_SUPABASE_ANON_KEY" ]; then
-            echo "NEXT_PUBLIC_SUPABASE_ANON_KEY is set"
-          else
-            echo "NEXT_PUBLIC_SUPABASE_ANON_KEY is EMPTY" && exit 1
-          fi
-          if [ -n "$DATABASE_URL" ]; then
-            echo "DATABASE_URL is set"
-          else
-            echo "DATABASE_URL is EMPTY" && exit 1
-          fi
+          SUPABASE_STATUS="$(supabase status --output json)"
+
+          NEXT_PUBLIC_SUPABASE_URL="$(echo "$SUPABASE_STATUS" | jq -r '.API_URL')"
+          NEXT_PUBLIC_SUPABASE_ANON_KEY="$(echo "$SUPABASE_STATUS" | jq -r '.ANON_KEY')"
+          DATABASE_URL="$(echo "$SUPABASE_STATUS" | jq -r '.DB_URL')"
+
+          test "$NEXT_PUBLIC_SUPABASE_URL" != "null"
+          test "$NEXT_PUBLIC_SUPABASE_ANON_KEY" != "null"
+          test "$DATABASE_URL" != "null"
+
+          test -n "$NEXT_PUBLIC_SUPABASE_URL"
+          test -n "$NEXT_PUBLIC_SUPABASE_ANON_KEY"
+          test -n "$DATABASE_URL"
+
+          echo "NEXT_PUBLIC_SUPABASE_URL=$NEXT_PUBLIC_SUPABASE_URL" >> "$GITHUB_ENV"
+          echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=$NEXT_PUBLIC_SUPABASE_ANON_KEY" >> "$GITHUB_ENV"
+          echo "DATABASE_URL=$DATABASE_URL" >> "$GITHUB_ENV"
 
       - name: Verify proxy migration
         run: |
