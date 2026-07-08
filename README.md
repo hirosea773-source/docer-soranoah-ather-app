@@ -4,31 +4,40 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ### Dev Container再構築後の確認手順
 
-Dev Containerを再構築（Rebuild Container）後、以下の手順で動作確認を行ってください。
+Dev Containerを再構築（Rebuild Container）後、以下の手順で動作確認を行います。
 
-1. **`host.docker.internal` の解決確認**:
-   Dev Containerのターミナルで以下のコマンドを実行し、`host.docker.internal`がホストのIPアドレスに解決されることを確認します。
+1. **依存関係の確認**
+   プロジェクトの依存関係をインストールします。
+
    ```bash
-   ping host.docker.internal
-   ```
-   または
-   ```bash
-   getent hosts host.docker.internal
+   npm ci
    ```
 
-2. **Supabase URLの設定確認**:
-   `playwright.config.ts` で設定した `NEXT_PUBLIC_SUPABASE_URL` が正しく `http://host.docker.internal:54321` を指していることを確認します。Playwrightテストを実行する際に、このURLが使用されます。
+2. **ローカルSupabaseの起動**
+   Supabase CLIを使用してローカル環境を起動します。この際、Playwright E2Eテストは `http://127.0.0.1:54321` を使用し、`DATABASE_URL` は `postgresql://postgres:postgres@127.0.0.1:54322/postgres` となります。
 
-3. **アプリケーションの起動と動作確認**:
-   アプリケーションを起動し、Supabaseとの連携（例: ログイン、Todoリストの操作）が正常に機能することを確認します。
    ```bash
-   npm run dev
+   npx supabase start
    ```
 
-4. **Playwrightテストの実行**:
-   Playwrightテストを実行し、エラーなく完了することを確認します。これにより、PlaywrightがSupabaseのURLに正しく接続できるかを確認できます。
+3. **マイグレーションの実行**
+   データベーススキーマを最新の状態に更新します。
+
+   ```bash
+   npx supabase db push
+   ```
+
+4. **E2Eテストの実行**
+   認証 (`tests/auth.spec.ts`) とTodo CRUD (`tests/todo-crud.spec.ts`) のE2Eテストを実行します。`NEXT_PUBLIC_SUPABASE_ANON_KEY` は、GitHub Actions内で起動したローカルSupabaseから取得されるため、GitHub Secretsに本番SupabaseのURLやキーを登録する必要はありません。。
+
    ```bash
    npx playwright test
+   ```
+
+5. **アプリケーションの起動（任意）**
+   必要に応じてアプリケーションを起動し、手動での動作確認を行います。
+   ```bash
+   npm run dev
    ```
 
 ### Getting Started
@@ -73,18 +82,21 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 当プロジェクトではAIサーバー（Ollama、Open WebUI等）は開発時のみ起動する前提とし、常時監視や24時間監視は前提にしません。
 
 ### 起動手順
+
 ```bash
 sudo systemctl start ollama
 docker start open-webui qdrant n8n
 ```
 
 ### 停止手順
+
 ```bash
 docker stop open-webui qdrant n8n
 sudo systemctl stop ollama
 ```
 
 ### 状態確認
+
 ```bash
 systemctl status ollama --no-pager
 docker ps
@@ -92,5 +104,5 @@ ollama list
 ```
 
 ### 障害時の復旧メモ
-- もし Ollama の起動に失敗する場合、システムデーモン設定 `/lib/systemd/system/ollama.service` または環境変数 `HSA_OVERRIDE_GFX_VERSION` を確認し、`sudo systemctl daemon-reload` の上でリスタートしてください。
 
+- もし Ollama の起動に失敗する場合、システムデーモン設定 `/lib/systemd/system/ollama.service` または環境変数 `HSA_OVERRIDE_GFX_VERSION` を確認し、`sudo systemctl daemon-reload` の上でリスタートしてください。
