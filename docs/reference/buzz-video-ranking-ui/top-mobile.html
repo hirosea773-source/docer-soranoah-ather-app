@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>バズランク - 今日のバズ動画ランキング</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary": "#ff4d2d",
+                "background": "#0f0f0f",
+                "surface": "#171717",
+                "card": "#1f1f1f",
+                "border": "#2b2b2b",
+                "on-surface": "#f5f5f5",
+                "on-surface-variant": "#a3a3a3",
+                "outline-variant": "#2b2b2b"
+            },
+            "borderRadius": {
+                "DEFAULT": "4px",
+                "lg": "4px",
+                "xl": "8px",
+                "full": "12px"
+            },
+            "spacing": {
+                "container-max-width": "1200px",
+                "base": "4px",
+                "gutter-md": "16px",
+                "margin-mobile": "16px",
+                "gutter-sm": "12px",
+                "margin-desktop": "24px"
+            },
+            "fontFamily": {
+                "sans": ["Noto Sans JP", "sans-serif"],
+                "body-md": ["Noto Sans JP"],
+                "headline-lg": ["Noto Sans JP"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0f0f0f;
+            color: #f5f5f5;
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(245, 245, 245, 0.1);
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="font-body-md">
+<!-- 1. Header (TopNavBar) -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-border h-16">
+<div class="max-w-[1200px] mx-auto flex justify-between items-center px-margin-mobile h-full">
+<h1 class="text-xl font-black text-primary">バズランク</h1>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface p-2 active:opacity-80 transition-opacity" data-icon="search">search</button>
+</div>
+</div>
+</header>
+<main class="pt-16 pb-12">
+<!-- Header Ad -->
+<div class="w-full bg-surface border-b border-border py-2 flex justify-center items-center">
+<div class="bg-card w-[320px] h-[50px] border border-border flex items-center justify-center relative">
+<span class="absolute top-1 left-2 text-[8px] text-on-surface-variant border border-border px-1">広告</span>
+<span class="text-on-surface-variant text-[10px] tracking-widest">HEADER ADVERTISEMENT</span>
+</div>
+</div>
+<!-- Breadcrumb -->
+<nav class="px-margin-mobile mt-4 flex items-center gap-2 text-[11px] text-on-surface-variant">
+<a class="hover:text-on-surface" href="#">ホーム</a>
+<span class="material-symbols-outlined text-[10px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface">急上昇</span>
+</nav>
+<!-- 2. Hero Section -->
+<section class="px-margin-mobile mt-4">
+<h2 class="text-2xl font-bold text-on-surface leading-tight">今日のバズ動画ランキング</h2>
+<div class="mt-2 flex items-center gap-4 text-[11px] text-on-surface-variant">
+<span>最終更新：2026年5月25日 12:00</span>
+<span>集計動画：50件</span>
+</div>
+</section>
+<!-- Search Input -->
+<section class="px-margin-mobile mt-6">
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-xl">search</span>
+<input class="w-full bg-surface border border-border rounded-lg py-3 pl-11 pr-4 text-sm focus:outline-none focus:border-primary placeholder:text-on-surface-variant/50" placeholder="動画やチャンネルを検索" type="text"/>
+</div>
+</section>
+<!-- 3. Category Filter -->
+<nav class="mt-6 overflow-x-auto hide-scrollbar flex gap-6 px-margin-mobile whitespace-nowrap border-b border-border/50">
+<a class="text-sm py-3 text-primary font-bold border-b-2 border-primary" href="#">すべて</a>
+<a class="text-sm py-3 text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">音楽</a>
+<a class="text-sm py-3 text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">ゲーム</a>
+<a class="text-sm py-3 text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">テック</a>
+<a class="text-sm py-3 text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">ニュース</a>
+<a class="text-sm py-3 text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">カルチャー</a>
+</nav>
+<!-- 4. Top 3 (Featured) -->
+<section class="mt-8 px-margin-mobile">
+<h3 class="text-sm font-bold text-primary uppercase tracking-wider mb-4">トップ3</h3>
+<div class="flex flex-col gap-6">
+<!-- Featured Card 1 -->
+<article class="bg-card rounded-xl overflow-hidden border border-border group active:scale-[0.98] transition-transform">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Cko2vLRAgUaVdyuFBpcOPW-WdzpHxCSXWZ11pk-tzogBoHFhg76apyDxBls4dQuP-8yJFec53Ljpu-UKEA0HR2oTX_LyVLqJqkWWN6dnk1wR6JbJitkrIsvxtXpwgQSERiQAmA298Kgze9XHkpE_hH43jJZJYYpK-ujCtaJffSXQpqBanOyWOOteUzX4elZF0MvTOadXG52KtFSuPHHWMzvUCc_N0gvebFVSLEI9Gi4lScTR--A46fHnF1_SCol7E4bEcCE2E5w"/>
+<div class="absolute top-0 left-0 bg-primary px-4 py-2 rounded-br-xl">
+<span class="font-black text-white text-xl">1</span>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center gap-2 text-primary font-bold text-[10px] uppercase">
+<span>カルチャー</span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="text-on-surface-variant">4,280万回再生</span>
+</div>
+<h4 class="text-lg font-bold text-on-surface mt-1 line-clamp-2">SNSで話題の最新ショート動画まとめ</h4>
+<p class="text-[12px] text-on-surface-variant mt-1">公式チャンネル</p>
+</div>
+</article>
+<!-- Featured Card 2 -->
+<article class="bg-card rounded-xl overflow-hidden border border-border group active:scale-[0.98] transition-transform">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDndNPAuroRNU8n-0UAWxF07y6ZL7dD819SMZeScTUntgiCotlQUorKLJAupduZO9hWMQQFZCpMPnWas6soc9mQ2N11t-gdtbTzyTO4dHuGwGmx0te4QUrAfquG2IDCencFGa5qZc-3YTu9THkdUuY45kPxtY-p6kVKEpTekJM0xJkahPYVwn61ahqLWNLOu7H0joINShWsnI4PIWaTQgNht39GEABQXbiZYxeo2W7QeodatdemYh44dQkT3quBAMMiAgsbwWRVlF8"/>
+<div class="absolute top-0 left-0 bg-primary px-4 py-2 rounded-br-xl">
+<span class="font-black text-white text-xl">2</span>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center gap-2 text-primary font-bold text-[10px] uppercase">
+<span>音楽</span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="text-on-surface-variant">1,920万回再生</span>
+</div>
+<h4 class="text-lg font-bold text-on-surface mt-1 line-clamp-2">いま急上昇中の音楽トレンド</h4>
+<p class="text-[12px] text-on-surface-variant mt-1">トレンド編集部</p>
+</div>
+</article>
+</div>
+</section>
+<!-- Feed Ad -->
+<section class="mt-10 px-margin-mobile">
+<div class="w-full h-[250px] bg-card border border-border flex items-center justify-center rounded-xl relative">
+<span class="font-bold text-on-surface-variant text-[10px] absolute top-2 left-3 bg-surface border border-border px-2 py-0.5 uppercase tracking-widest">広告</span>
+<span class="text-on-surface-variant text-xs uppercase tracking-[0.2em] opacity-50">FEED ADVERTISEMENT (250px)</span>
+</div>
+</section>
+<!-- 6. Ranking List -->
+<section class="mt-10 px-margin-mobile">
+<h3 class="text-sm font-bold text-primary uppercase tracking-wider mb-4">ランキング一覧</h3>
+<div class="flex flex-col">
+<!-- List Item 4 -->
+<div class="py-4 border-b border-border flex items-center gap-4 active:bg-card transition-colors">
+<span class="text-stroke text-3xl font-black w-8 flex-shrink-0 text-center">04</span>
+<div class="flex-grow">
+<span class="font-bold text-primary text-[10px] uppercase">テック</span>
+<h5 class="font-bold text-on-surface leading-tight mt-0.5 line-clamp-2 text-sm">AI時代の動画クリエイター戦略</h5>
+<div class="flex items-center gap-2 text-[10px] text-on-surface-variant mt-1">
+<span>バズ研究所</span>
+<span>•</span>
+<span>540万回再生</span>
+</div>
+</div>
+<div class="w-20 aspect-video bg-card rounded overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLedLjGUqRsiAGlu6IWY5i5FEkonhYdLmWeu6OTl9f0LEk5tpKeK_V9sUDCNf0bUq43QCC9YlXyPJUY2Bjp7042cW30ZNFNrILQ0Aw1IUnXjdnbAwjq-G-fABPQQ_CNOWop-ea-3_lgdWltWRS_s3nOoFye98FPXlqqWbcWiuui32c0WXT3dXgXMhO6YmCa2L2nQMG3DyH4NIdCBx_VOpwYHlXWXXn_UnlhxQn1rn_z59AgA1H69j0msESnYmbxM2rHPmfB95I8Kk"/>
+</div>
+</div>
+<!-- List Item 5 -->
+<div class="py-4 border-b border-border flex items-center gap-4 active:bg-card transition-colors">
+<span class="text-stroke text-3xl font-black w-8 flex-shrink-0 text-center">05</span>
+<div class="flex-grow">
+<span class="font-bold text-primary text-[10px] uppercase">ニュース</span>
+<h5 class="font-bold text-on-surface leading-tight mt-0.5 line-clamp-2 text-sm">国内でバズったニュース動画</h5>
+<div class="flex items-center gap-2 text-[10px] text-on-surface-variant mt-1">
+<span>動画ニュース</span>
+<span>•</span>
+<span>320万回再生</span>
+</div>
+</div>
+<div class="w-20 aspect-video bg-card rounded overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADQSOT0Z33ef5kQoDRQ1d_eTiqBfu2QGMX3kq0B84nFQNAFfrTaftwZRuxoPwmuGRmlZs6tyJiT2pG6A4sPeNP56lzuTuURZCze1CHvD1RYCcqAay_Ibb-zJzrMlDB7oOj8uQ-nzIYSpasQ9ChNHAh-0kkx4VE-nKOWSiFaBbTjb9Xssoj0oO9-dqCQ0Q0jBKNBSsy79lNs0OhELzDXyGEE5JvYdZJmGM0hk8VCUGiAOVona2gXa6R3CMQuedyTI8x9PrUMQmf1kg"/>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-4 bg-primary text-white font-bold rounded-full text-sm uppercase tracking-widest active:scale-95 transition-all">
+            もっと見る
+        </button>
+</section>
+<!-- SEO & FAQ Section -->
+<section class="mt-16 px-margin-mobile space-y-10">
+<!-- SEO Description -->
+<div>
+<h3 class="text-lg font-bold text-on-surface mb-4">バズランクについて</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                バズランクは、YouTubeやSNSで今この瞬間に話題となっている動画を独自のアルゴリズムで解析し、ランキング形式でお届けするトレンド情報サイトです。再生回数だけでなく、SNSでの拡散数、注目度の急上昇率などを多角的に分析。音楽、ゲーム、テック、ニュースなど、幅広いジャンルの「今見るべき動画」を一目で把握できます。
+            </p>
+</div>
+<!-- FAQ -->
+<div>
+<h3 class="text-lg font-bold text-on-surface mb-4">よくある質問</h3>
+<div class="space-y-4">
+<div class="bg-card p-4 rounded-lg border border-border">
+<p class="text-sm font-bold text-on-surface">ランキングはいつ更新されますか？</p>
+<p class="text-xs text-on-surface-variant mt-2">ランキングは毎日12:00と0:00の2回、最新のデータを集計して更新されます。</p>
+</div>
+<div class="bg-card p-4 rounded-lg border border-border">
+<p class="text-sm font-bold text-on-surface">ランキングの集計基準は何ですか？</p>
+<p class="text-xs text-on-surface-variant mt-2">直近24時間の再生回数、高評価数、コメント数に加え、主要SNSでの共有数などを独自のウェイトでスコアリングしています。</p>
+</div>
+<div class="bg-card p-4 rounded-lg border border-border">
+<p class="text-sm font-bold text-on-surface">動画の掲載を依頼できますか？</p>
+<p class="text-xs text-on-surface-variant mt-2">現在は自動収集のみとなっており、個別のご依頼は承っておりませんが、広告枠での掲載についてはお問い合わせフォームよりご連絡ください。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Ad -->
+<div class="mt-12 w-full flex justify-center px-margin-mobile">
+<div class="bg-card w-full h-[90px] border border-border flex items-center justify-center relative rounded-lg">
+<span class="absolute top-1 left-2 text-[8px] text-on-surface-variant border border-border px-1">広告</span>
+<span class="text-on-surface-variant text-[10px] tracking-widest">FOOTER ADVERTISEMENT (90px)</span>
+</div>
+</div>
+</main>
+<!-- 7. Footer -->
+<footer class="bg-surface border-t border-border w-full">
+<div class="max-w-[1200px] mx-auto py-10 px-margin-mobile flex flex-col items-center gap-8">
+<h2 class="text-lg font-bold text-on-surface">バズランク</h2>
+<nav class="flex flex-wrap justify-center gap-x-6 gap-y-3">
+<a class="text-xs text-on-surface-variant hover:text-primary underline transition-all" href="#">運営情報</a>
+<a class="text-xs text-on-surface-variant hover:text-primary underline transition-all" href="#">利用規約</a>
+<a class="text-xs text-on-surface-variant hover:text-primary underline transition-all" href="#">プライバシーポリシー</a>
+<a class="text-xs text-on-surface-variant hover:text-primary underline transition-all" href="#">お問い合わせ</a>
+</nav>
+<p class="text-xs text-on-surface-variant opacity-70">
+            © 2024 バズランク
+        </p>
+</div>
+</footer>
+<script>
+    // Simple interactions for mobile
+    document.querySelectorAll('article, .py-4, button').forEach(item => {
+        item.addEventListener('touchstart', function() {
+            this.style.opacity = '0.7';
+        });
+        item.addEventListener('touchend', function() {
+            this.style.opacity = '1';
+        });
+    });
+
+    // Filter active state
+    const filters = document.querySelectorAll('nav a');
+    filters.forEach(filter => {
+        filter.addEventListener('click', function(e) {
+            if(this.innerText !== "すべて") {
+                e.preventDefault();
+                filters.forEach(f => {
+                    f.classList.remove('text-primary', 'font-bold', 'border-b-2', 'border-primary');
+                    f.classList.add('text-on-surface-variant');
+                });
+                this.classList.add('text-primary', 'font-bold', 'border-b-2', 'border-primary');
+                this.classList.remove('text-on-surface-variant');
+            }
+        });
+    });
+</script>
+</body></html>

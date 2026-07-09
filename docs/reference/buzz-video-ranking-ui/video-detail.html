@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SNSで話題の最新ショート動画まとめ | バズランク</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#ffb4a5",
+                    "surface-bright": "#483531",
+                    "surface-container-highest": "#43302c",
+                    "surface-container-low": "#281714",
+                    "primary-fixed": "#ffdad3",
+                    "primary": "#ff4d2d",
+                    "tertiary-fixed-dim": "#64d3fe",
+                    "on-surface-variant": "#e5beb6",
+                    "secondary": "#c6c6c7",
+                    "outline": "#ac8981",
+                    "tertiary": "#64d3fe",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "secondary-fixed": "#e2e2e2",
+                    "background": "#0f0f0f",
+                    "on-background": "#fbdcd6",
+                    "tertiary-fixed": "#bce9ff",
+                    "on-tertiary-container": "#002e3c",
+                    "surface-dim": "#1f0f0c",
+                    "inverse-primary": "#ba1d00",
+                    "surface-variant": "#43302c",
+                    "surface-container-high": "#382622",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#5c403a",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed-variant": "#004d63",
+                    "on-secondary-container": "#b4b5b5",
+                    "secondary-container": "#454747",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "error": "#ffb4ab",
+                    "surface-container": "#2c1b18",
+                    "inverse-surface": "#fbdcd6",
+                    "on-primary-container": "#580800",
+                    "surface": "#1f0f0c",
+                    "on-surface": "#fbdcd6",
+                    "on-primary-fixed": "#3e0400",
+                    "on-primary-fixed-variant": "#8e1400",
+                    "primary-container": "#ff5637",
+                    "on-tertiary": "#003545",
+                    "surface-tint": "#ffb4a5",
+                    "on-secondary-fixed-variant": "#454747",
+                    "tertiary-container": "#109dc5",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#001f29",
+                    "inverse-on-surface": "#3f2c28",
+                    "surface-container-lowest": "#190a08",
+                    "error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "4px",
+                    "lg": "4px",
+                    "xl": "8px",
+                    "full": "12px"
+            },
+            "spacing": {
+                    "container-max-width": "1200px",
+                    "base": "4px",
+                    "gutter-md": "16px",
+                    "margin-mobile": "16px",
+                    "gutter-sm": "12px",
+                    "margin-desktop": "24px",
+                    "stack-md": "24px",
+                    "stack-lg": "40px",
+                    "stack-xl": "64px"
+            },
+            "fontFamily": {
+                    "sans": ["Noto Sans JP", "sans-serif"],
+                    "label-md": ["Noto Sans JP"],
+                    "label-sm": ["Noto Sans JP"],
+                    "body-md": ["Noto Sans JP"],
+                    "headline-md": ["Noto Sans JP"],
+                    "headline-sm": ["Noto Sans JP"],
+                    "body-lg": ["Noto Sans JP"],
+                    "headline-lg": ["Noto Sans JP"],
+                    "headline-lg-mobile": ["Noto Sans JP"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "headline-lg": ["24px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0f0f0f;
+            color: #fbdcd6;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-white">
+<!-- TopNavBar -->
+<header class="bg-surface-container-low fixed top-0 w-full z-50 border-b border-outline-variant">
+<nav class="max-w-[1200px] mx-auto flex justify-between items-center px-margin-desktop h-16">
+<div class="font-headline-lg text-headline-lg font-black text-primary cursor-pointer">
+                バズランク
+            </div>
+<div class="hidden md:flex items-center space-x-6">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">急上昇</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="#">音楽</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="#">ゲーム</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="#">テック</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="#">ニュース</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="#">カルチャー</a>
+</div>
+<div class="flex items-center">
+<button class="p-2 hover:text-primary transition-opacity active:opacity-80">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-stack-xl">
+<!-- Breadcrumb -->
+<nav class="max-w-[1200px] mx-auto px-margin-desktop mb-6">
+<div class="flex items-center space-x-2 text-label-md font-label-md text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">ホーム</a>
+<span class="text-[10px]">＞</span>
+<a class="hover:text-primary transition-colors" href="#">急上昇</a>
+<span class="text-[10px]">＞</span>
+<span class="text-on-surface">SNSで話題の最新ショート動画まとめ</span>
+</div>
+</nav>
+<div class="max-w-[1200px] mx-auto px-margin-desktop flex flex-col lg:flex-row gap-8">
+<!-- Left Column: Video and Info -->
+<div class="flex-grow">
+<!-- Video Player Placeholder -->
+<div class="relative aspect-video bg-surface-container rounded-lg overflow-hidden mb-6 group">
+<img alt="Video Thumbnail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiW3Qksp_sCML8_zuzoArB3GHtAqVdXsmutZCDUCwl67ygInsr253gjZxUKZHue4hjar0nqXTeADMof-10FjcnuJCnP3av8NwguDdGRTH9wp4uxFaQxGPd8vkyhJ-4QgesylciRo7hAQBq38KZa19acBcKHrJXmGEnQCLOCIfFXUdtnpE6esRDBkks2M78B_vh4ImhoJAaev_MtTNCezvDwkkbrDULFdhcZPV4oZATTCTDLpO9ilYwn0dQVS04lh33UMyPGTZ2EeE"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[64px] text-white">play_circle</span>
+</div>
+<!-- Controls Mockup -->
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
+<div class="h-full bg-primary w-1/3"></div>
+</div>
+</div>
+<!-- Video Title & Stats -->
+<div class="mb-6">
+<h1 class="font-headline-lg text-headline-lg text-white mb-4">SNSで話題の最新ショート動画まとめ</h1>
+<div class="flex flex-wrap items-center justify-between gap-4 py-4 border-b border-outline-variant">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-surface-container overflow-hidden">
+<img alt="Channel Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw6Dr32JqC882hO_TMtJpKknkBT-Nxy5nnfzqFhNZ1LUfGEwHfWP_EVH6E1BkHXirmBm9mY24pgExQJTZBuJTYC74b5buUsD2MFJMtqY_XoidiLbOQsUN0XK8f2U9jCWAwUbLjbIIoP1Ea4OTMOJEppx0gcrVI-LYrUOr8Q6XdAmy1g-YdfuEgErBpCL8Zf5O6nTXCcb21DE-ML-O1Q9JNCrypR9014xPXqvmTY643ZgwvuaQz0b_xPnC0tM2TbCD8zS0EOMezgrk"/>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-white">公式チャンネル</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">チャンネル登録者数 85.2万人</p>
+</div>
+<button class="ml-4 px-6 py-2 bg-on-surface text-surface font-label-md text-label-md rounded-full font-bold hover:opacity-90 transition-opacity">チャンネル登録</button>
+</div>
+<div class="flex items-center space-x-6 text-on-surface-variant font-label-md text-label-md">
+<div class="flex flex-col items-end">
+<span class="text-white font-bold">42,800,000 回視聴</span>
+<span>2024/05/20 公開</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2 mb-stack-lg">
+<a class="px-3 py-1 bg-surface-container-high text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-variant transition-colors" href="#">#ショート動画</a>
+<a class="px-3 py-1 bg-surface-container-high text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-variant transition-colors" href="#">#トレンド</a>
+<a class="px-3 py-1 bg-surface-container-high text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-variant transition-colors" href="#">#SNS</a>
+<a class="px-3 py-1 bg-surface-container-high text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-variant transition-colors" href="#">#2024</a>
+<a class="px-3 py-1 bg-surface-container-high text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-variant transition-colors" href="#">#音楽</a>
+</div>
+<!-- Related Videos Mobile/Tablet -->
+<div class="lg:hidden mt-stack-lg">
+<h3 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-4">関連動画</h3>
+<div class="space-y-4">
+<!-- Repeat item for mobile context -->
+<div class="group flex gap-3 cursor-pointer">
+<div class="w-32 h-20 bg-surface-container rounded overflow-hidden flex-shrink-0">
+<img alt="Related thumbnail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxOq-N83lLHEhKli_cVzfFQhn3ZppDfYz36MdJB-6bWJiG8hZrSgwyQ3vIhfO-4FvMo4sPw0RpTmEjXn6zpdebnASyCQka1hsFmivR_lnxhO8WJif4m6ZTzBQAa1_d-wagNi91GvN89VLjHMNGRo91rlyrzFyfIsQrQkGVX8AizT-3IK0gBB5K7LQha-FWxxGslVOz2r_WmUKGzZQYQ3WlVm7UDe1n16hOGdSATRP-JDog7Fkp5zr8xPGNU-bQuMY6vrtFpZpOUzY"/>
+</div>
+<div>
+<h4 class="font-body-md text-body-md text-white line-clamp-2 group-hover:text-primary transition-colors">ゲーム実況で注目された名シーン</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">トレンド編集部 • 1920万回再生</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar -->
+<aside class="w-full lg:w-[320px] flex-shrink-0">
+<div class="sticky top-24 space-y-stack-lg">
+<!-- Related Videos Desktop -->
+<div class="hidden lg:block">
+<h3 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-6">関連動画</h3>
+<div class="space-y-6">
+<div class="group flex gap-3 cursor-pointer">
+<div class="w-24 h-14 bg-surface-container rounded overflow-hidden flex-shrink-0">
+<img alt="Related thumbnail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxOq-N83lLHEhKli_cVzfFQhn3ZppDfYz36MdJB-6bWJiG8hZrSgwyQ3vIhfO-4FvMo4sPw0RpTmEjXn6zpdebnASyCQka1hsFmivR_lnxhO8WJif4m6ZTzBQAa1_d-wagNi91GvN89VLjHMNGRo91rlyrzFyfIsQrQkGVX8AizT-3IK0gBB5K7LQha-FWxxGslVOz2r_WmUKGzZQYQ3WlVm7UDe1n16hOGdSATRP-JDog7Fkp5zr8xPGNU-bQuMY6vrtFpZpOUzY"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-label-md text-label-md text-white line-clamp-2 group-hover:text-primary transition-colors">ゲーム実況で注目された名シーン</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">1920万回再生</p>
+</div>
+</div>
+<div class="group flex gap-3 cursor-pointer">
+<div class="w-24 h-14 bg-surface-container rounded overflow-hidden flex-shrink-0">
+<img alt="Related thumbnail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADBioTQ53qDhZSUo4_ZH5GNaLtSsu7QjSzJ7jhRBf7jwj8mH4mFOKQBw6e5NWChRXANWBNAy8jtzN4Xi3a3v9Fr1CxT6laQ7Ie_Ff6dAhOXLr9aPvnN2uySMUt9bJ2gDB0edZXK30--V4n8B3Pj8tRWV8FEtsv3AFdQiuYl6hHq1ebtGs6hYh58qMg-WfnwYD7HjcrqJSc8-QJYI_5A5R_wbmGoSk_qRD8NDPVkncfbBuuVORQ-DCptYVjPDKRql3dw_qZpRay7xU"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-label-md text-label-md text-white line-clamp-2 group-hover:text-primary transition-colors">AI時代の動画クリエイター戦略</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">860万回再生</p>
+</div>
+</div>
+<div class="group flex gap-3 cursor-pointer">
+<div class="w-24 h-14 bg-surface-container rounded overflow-hidden flex-shrink-0">
+<img alt="Related thumbnail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4n2E19_orYh9MbNsHQGS9hazJxYW-i-dNZ5znsph8mrfzH8QWMnJOYUvhxZAyQG5ncvtEVBynXt7TxhVpEbseOgGAmiRF5Ywq2KBzu8cYaXS4u_dYyn6taUYfxjj1kTYrRUoJODED2yX-gGsiGzk25Mk1sOXQhWUdztAOSSxlUCCJBDoIO_zkVd2tOqjdWgCJ5IO4YhZhmcXMD6XrCLLv-MNqcWgNPLc0bSE_m3LPbtZazZJEsdDdCdrNBDl2JZw9diYRiS68_vE"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-label-md text-label-md text-white line-clamp-2 group-hover:text-primary transition-colors">いま急上昇中の音楽トレンド</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">540万回再生</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Ad Placeholder (600px height concept) -->
+<div class="w-full h-[600px] bg-surface-container-low flex flex-col items-center justify-center border border-outline-variant/20 rounded">
+<span class="font-label-md text-label-md text-on-secondary-fixed-variant tracking-widest uppercase mb-2">広告</span>
+<div class="w-16 h-1 w-full bg-surface-variant/30"></div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim w-full border-t border-outline-variant">
+<div class="max-w-[1200px] mx-auto py-8 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">
+                バズランク
+            </div>
+<div class="flex items-center space-x-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-all" href="#">運営情報</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-all" href="#">利用規約</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-all" href="#">プライバシーポリシー</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-all" href="#">お問い合わせ</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">
+                © 2024 バズランク
+            </div>
+</div>
+</footer>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'scale(0.98)';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = 'scale(1)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

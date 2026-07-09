@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>バズランク | 今日のバズ動画ランキング</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#ff4d2d",
+                    "background": "#0f0f0f",
+                    "surface": "#171717",
+                    "card": "#1f1f1f",
+                    "border": "#2b2b2b",
+                    "text": "#f5f5f5",
+                    "sec-text": "#a3a3a3",
+                    "outline-variant": "#2b2b2b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "4px",
+                    "lg": "4px",
+                    "xl": "8px",
+                    "full": "12px"
+            },
+            "spacing": {
+                    "container-max-width": "1200px",
+                    "base": "4px",
+                    "gutter-md": "16px",
+                    "margin-mobile": "16px",
+                    "gutter-sm": "12px",
+                    "margin-desktop": "24px",
+                    "stack-md": "24px",
+                    "stack-lg": "40px",
+                    "stack-xl": "64px"
+            },
+            "fontFamily": {
+                    "sans": ["Noto Sans JP", "sans-serif"],
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "headline-lg": ["24px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0f0f0f;
+            color: #f5f5f5;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .editorial-gradient {
+            background: linear-gradient(0deg, rgba(15,15,15,1) 0%, rgba(15,15,15,0.4) 50%, rgba(15,15,15,0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-text selection:bg-primary selection:text-white">
+<!-- TopNavBar -->
+<header class="bg-surface fixed top-0 w-full z-50 border-b border-border">
+<nav class="max-w-[1200px] mx-auto flex justify-between items-center px-margin-desktop h-16 gap-8">
+<div class="font-bold text-2xl font-black text-primary flex-shrink-0">
+            バズランク
+        </div>
+<div class="hidden md:flex items-center space-x-6 flex-grow">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 text-sm" href="#">急上昇</a>
+<a class="text-sec-text hover:text-primary transition-colors duration-200 text-sm" href="#">音楽</a>
+<a class="text-sec-text hover:text-primary transition-colors duration-200 text-sm" href="#">ゲーム</a>
+<a class="text-sec-text hover:text-primary transition-colors duration-200 text-sm" href="#">テック</a>
+<a class="text-sec-text hover:text-primary transition-colors duration-200 text-sm" href="#">ニュース</a>
+</div>
+<div class="flex items-center w-full max-w-xs relative">
+<input class="w-full bg-card border border-border rounded-full py-1.5 pl-4 pr-10 text-sm focus:outline-none focus:border-primary transition-colors placeholder-sec-text" placeholder="動画やチャンネルを検索" type="text"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-sec-text hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="search">search</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-stack-xl">
+<!-- Breadcrumb -->
+<nav class="max-w-[1200px] mx-auto px-margin-desktop mb-6">
+<ol class="flex items-center space-x-2 text-xs text-sec-text">
+<li><a class="hover:text-primary transition-colors" href="#">ホーム</a></li>
+<li><span>＞</span></li>
+<li class="text-text">急上昇</li>
+</ol>
+</nav>
+<!-- Header Ad Placeholder -->
+<div class="max-w-[1200px] mx-auto px-margin-desktop mb-10 flex justify-center">
+<div class="w-full max-w-[728px] h-[90px] bg-card border border-border flex items-center justify-center rounded">
+<span class="text-xs text-sec-text tracking-widest uppercase">広告</span>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="max-w-[1200px] mx-auto px-margin-desktop mb-stack-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-[32px] md:text-display-lg font-black text-text mb-4 leading-tight">
+                    今日のバズ動画ランキング
+                </h1>
+<p class="text-body-lg text-sec-text max-w-2xl">
+                    いま話題の動画を、再生数・注目度・拡散性をもとに毎日更新。
+                </p>
+</div>
+<div class="flex flex-col items-start md:items-end text-xs text-sec-text space-y-1">
+<p>最終更新：2026年5月25日 12:00</p>
+<p>集計動画：50件</p>
+</div>
+</div>
+</section>
+<!-- Category Filter -->
+<section class="max-w-[1200px] mx-auto px-margin-desktop mb-stack-lg">
+<div class="flex space-x-3 overflow-x-auto hide-scrollbar pb-2">
+<button class="px-6 py-2 bg-primary text-white text-sm font-medium rounded-full whitespace-nowrap">すべて</button>
+<button class="px-6 py-2 bg-card text-text text-sm font-medium rounded-full whitespace-nowrap border border-border hover:border-primary transition-colors">音楽</button>
+<button class="px-6 py-2 bg-card text-text text-sm font-medium rounded-full whitespace-nowrap border border-border hover:border-primary transition-colors">ゲーム</button>
+<button class="px-6 py-2 bg-card text-text text-sm font-medium rounded-full whitespace-nowrap border border-border hover:border-primary transition-colors">テック</button>
+<button class="px-6 py-2 bg-card text-text text-sm font-medium rounded-full whitespace-nowrap border border-border hover:border-primary transition-colors">ニュース</button>
+<button class="px-6 py-2 bg-card text-text text-sm font-medium rounded-full whitespace-nowrap border border-border hover:border-primary transition-colors">エンタメ</button>
+<button class="px-6 py-2 bg-card text-text text-sm font-medium rounded-full whitespace-nowrap border border-border hover:border-primary transition-colors">スポーツ</button>
+</div>
+</section>
+<!-- Top 3 Featured -->
+<section class="max-w-[1200px] mx-auto px-margin-desktop mb-stack-xl">
+<h3 class="text-sm font-bold text-primary uppercase tracking-widest mb-6">トップ3</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Rank 1 -->
+<div class="group relative flex flex-col cursor-pointer">
+<div class="relative aspect-[16/9] bg-card overflow-hidden rounded border border-border">
+<img alt="Trending Media 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiW3Qksp_sCML8_zuzoArB3GHtAqVdXsmutZCDUCwl67ygInsr253gjZxUKZHue4hjar0nqXTeADMof-10FjcnuJCnP3av8NwguDdGRTH9wp4uxFaQxGPd8vkyhJ-4QgesylciRo7hAQBq38KZa19acBcKHrJXmGEnQCLOCIfFXUdtnpE6esRDBkks2M78B_vh4ImhoJAaev_MtTNCezvDwkkbrDULFdhcZPV4oZATTCTDLpO9ilYwn0dQVS04lh33UMyPGTZ2EeE"/>
+<div class="absolute inset-0 editorial-gradient opacity-60"></div>
+<div class="absolute top-0 left-0 bg-primary px-3 py-1.5 flex items-center justify-center">
+<span class="font-black text-lg text-white italic">01</span>
+</div>
+</div>
+<div class="mt-4">
+<span class="text-xs font-bold text-primary uppercase mb-2 block">音楽</span>
+<h2 class="text-lg font-bold text-text group-hover:text-primary transition-colors line-clamp-2">SNSで話題の最新ショート動画まとめ</h2>
+<div class="mt-2 flex items-center text-sec-text text-xs">
+<span>公式チャンネル</span>
+<span class="mx-2">•</span>
+<span>4,280万回再生</span>
+</div>
+</div>
+</div>
+<!-- Rank 2 -->
+<div class="group relative flex flex-col cursor-pointer">
+<div class="relative aspect-[16/9] bg-card overflow-hidden rounded border border-border">
+<img alt="Trending Media 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxOq-N83lLHEhKli_cVzfFQhn3ZppDfYz36MdJB-6bWJiG8hZrSgwyQ3vIhfO-4FvMo4sPw0RpTmEjXn6zpdebnASyCQka1hsFmivR_lnxhO8WJif4m6ZTzBQAa1_d-wagNi91GvN89VLjHMNGRo91rlyrzFyfIsQrQkGVX8AizT-3IK0gBB5K7LQha-FWxxGslVOz2r_WmUKGzZQYQ3WlVm7UDe1n16hOGdSATRP-JDog7Fkp5zr8xPGNU-bQuMY6vrtFpZpOUzY"/>
+<div class="absolute inset-0 editorial-gradient opacity-60"></div>
+<div class="absolute top-0 left-0 bg-primary px-3 py-1.5 flex items-center justify-center">
+<span class="font-black text-lg text-white italic">02</span>
+</div>
+</div>
+<div class="mt-4">
+<span class="text-xs font-bold text-primary uppercase mb-2 block">ゲーム</span>
+<h2 class="text-lg font-bold text-text group-hover:text-primary transition-colors line-clamp-2">ゲーム実況で注目された名シーン</h2>
+<div class="mt-2 flex items-center text-sec-text text-xs">
+<span>トレンド編集部</span>
+<span class="mx-2">•</span>
+<span>1,920万回再生</span>
+</div>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="group relative flex flex-col cursor-pointer">
+<div class="relative aspect-[16/9] bg-card overflow-hidden rounded border border-border">
+<img alt="Trending Media 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADBioTQ53qDhZSUo4_ZH5GNaLtSsu7QjSzJ7jhRBf7jwj8mH4mFOKQBw6e5NWChRXANWBNAy8jtzN4Xi3a3v9Fr1CxT6laQ7Ie_Ff6dAhOXLr9aPvnN2uySMUt9bJ2gDB0edZXK30--V4n8B3Pj8tRWV8FEtsv3AFdQiuYl6hHq1ebtGs6hYh58qMg-WfnwYD7HjcrqJSc8-QJYI_5A5R_wbmGoSk_qRD8NDPVkncfbBuuVORQ-DCptYVjPDKRql3dw_qZpRay7xU"/>
+<div class="absolute inset-0 editorial-gradient opacity-60"></div>
+<div class="absolute top-0 left-0 bg-primary px-3 py-1.5 flex items-center justify-center">
+<span class="font-black text-lg text-white italic">03</span>
+</div>
+</div>
+<div class="mt-4">
+<span class="text-xs font-bold text-primary uppercase mb-2 block">テック</span>
+<h2 class="text-lg font-bold text-text group-hover:text-primary transition-colors line-clamp-2">AI時代の動画クリエイター戦略</h2>
+<div class="mt-2 flex items-center text-sec-text text-xs">
+<span>バズ研究所</span>
+<span class="mx-2">•</span>
+<span>860万回再生</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Feed Grid -->
+<section class="max-w-[1200px] mx-auto px-margin-desktop flex flex-col lg:flex-row gap-8">
+<!-- Ranking List -->
+<div class="flex-grow">
+<h3 class="text-sm font-bold text-primary uppercase tracking-widest mb-6">ランキング一覧</h3>
+<div class="space-y-4">
+<!-- Item 04 -->
+<div class="group flex items-center gap-4 p-3 bg-card/50 hover:bg-card transition-all cursor-pointer rounded border border-transparent hover:border-border">
+<span class="font-black text-[32px] text-border w-12 text-center transition-colors group-hover:text-primary/40 italic">04</span>
+<div class="w-32 h-20 md:w-40 md:h-24 bg-card flex-shrink-0 overflow-hidden rounded border border-border">
+<img alt="Media 4" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4n2E19_orYh9MbNsHQGS9hazJxYW-i-dNZ5znsph8mrfzH8QWMnJOYUvhxZAyQG5ncvtEVBynXt7TxhVpEbseOgGAmiRF5Ywq2KBzu8cYaXS4u_dYyn6taUYfxjj1kTYrRUoJODED2yX-gGsiGzk25Mk1sOXQhWUdztAOSSxlUCCJBDoIO_zkVd2tOqjdWgCJ5IO4YhZhmcXMD6XrCLLv-MNqcWgNPLc0bSE_m3LPbtZazZJEsdDdCdrNBDl2JZw9diYRiS68_vE"/>
+</div>
+<div class="flex-grow">
+<h4 class="text-md font-bold text-text group-hover:text-primary transition-colors mb-1 line-clamp-1">いま急上昇中の音楽トレンド</h4>
+<p class="text-xs text-sec-text uppercase flex items-center">
+<span>動画ニュース</span> <span class="mx-2">•</span> <span>540万回再生</span>
+</p>
+</div>
+</div>
+<!-- Item 05 -->
+<div class="group flex items-center gap-4 p-3 bg-card/50 hover:bg-card transition-all cursor-pointer rounded border border-transparent hover:border-border">
+<span class="font-black text-[32px] text-border w-12 text-center transition-colors group-hover:text-primary/40 italic">05</span>
+<div class="w-32 h-20 md:w-40 md:h-24 bg-card flex-shrink-0 overflow-hidden rounded border border-border">
+<img alt="Media 5" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw6Dr32JqC882hO_TMtJpKknkBT-Nxy5nnfzqFhNZ1LUfGEwHfWP_EVH6E1BkHXirmBm9mY24pgExQJTZBuJTYC74b5buUsD2MFJMtqY_XoidiLbOQsUN0XK8f2U9jCWAwUbLjbIIoP1Ea4OTMOJEppx0gcrVI-LYrUOr8Q6XdAmy1g-YdfuEgErBpCL8Zf5O6nTXCcb21DE-ML-O1Q9JNCrypR9014xPXqvmTY643ZgwvuaQz0b_xPnC0tM2TbCD8zS0EOMezgrk"/>
+</div>
+<div class="flex-grow">
+<h4 class="text-md font-bold text-text group-hover:text-primary transition-colors mb-1 line-clamp-1">国内でバズったニュース動画</h4>
+<p class="text-xs text-sec-text uppercase flex items-center">
+<span>クリエイター速報</span> <span class="mx-2">•</span> <span>320万回再生</span>
+</p>
+</div>
+</div>
+</div>
+<div class="pt-8 text-center">
+<button class="text-sm font-bold text-primary uppercase border border-primary px-8 py-2 hover:bg-primary hover:text-white transition-all rounded-full">もっと見る</button>
+</div>
+</div>
+<!-- Sidebar -->
+<aside class="w-full lg:w-[320px] flex-shrink-0">
+<div class="sticky top-24 space-y-stack-lg">
+<!-- Sidebar Ad Placeholder -->
+<div class="w-full h-[600px] bg-card border border-border flex items-center justify-center rounded">
+<span class="text-xs text-sec-text tracking-widest uppercase">広告</span>
+</div>
+<!-- Popular Categories -->
+<div>
+<h3 class="text-sm font-bold text-text uppercase tracking-widest mb-6">人気カテゴリ</h3>
+<div class="space-y-4">
+<a class="flex justify-between items-center group" href="#">
+<span class="text-sm text-sec-text group-hover:text-primary transition-colors">ショート動画</span>
+<span class="text-[10px] text-sec-text/60">12k</span>
+</a>
+<a class="flex justify-between items-center group" href="#">
+<span class="text-sm text-sec-text group-hover:text-primary transition-colors">音楽トレンド</span>
+<span class="text-[10px] text-sec-text/60">8k</span>
+</a>
+<a class="flex justify-between items-center group" href="#">
+<span class="text-sm text-sec-text group-hover:text-primary transition-colors">AI研究</span>
+<span class="text-[10px] text-sec-text/60">24k</span>
+</a>
+<a class="flex justify-between items-center group" href="#">
+<span class="text-sm text-sec-text group-hover:text-primary transition-colors">スポーツ名場面</span>
+<span class="text-[10px] text-sec-text/60">15k</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-[1200px] mx-auto px-margin-desktop mt-stack-xl border-t border-border pt-stack-lg">
+<h3 class="text-xl font-bold text-text mb-8">よくある質問</h3>
+<div class="space-y-6 max-w-3xl">
+<div>
+<p class="font-bold text-text mb-2 flex items-start">
+<span class="text-primary mr-2">Q.</span>ランキングはどのように決まりますか？
+                </p>
+<p class="text-sec-text text-sm ml-6 flex items-start">
+<span class="mr-2">A.</span>再生数、注目度、拡散性などをもとに独自に集計しています。
+                </p>
+</div>
+<div>
+<p class="font-bold text-text mb-2 flex items-start">
+<span class="text-primary mr-2">Q.</span>どのくらいの頻度で更新されますか？
+                </p>
+<p class="text-sec-text text-sm ml-6 flex items-start">
+<span class="mr-2">A.</span>毎日更新を想定しています。
+                </p>
+</div>
+<div>
+<p class="font-bold text-text mb-2 flex items-start">
+<span class="text-primary mr-2">Q.</span>掲載動画はどこから取得していますか？
+                </p>
+<p class="text-sec-text text-sm ml-6 flex items-start">
+<span class="mr-2">A.</span>公開されている動画情報をもとに掲載します。
+                </p>
+</div>
+</div>
+</section>
+<!-- SEO Description Section -->
+<section class="max-w-[1200px] mx-auto px-margin-desktop mt-stack-xl bg-card p-8 rounded border border-border">
+<h3 class="text-xl font-bold text-text mb-4">今日の急上昇動画ランキングとは？</h3>
+<p class="text-sec-text text-sm leading-relaxed">
+            バズランクでは、SNSや動画プラットフォームで注目されている動画を毎日集計し、見やすいランキング形式で紹介しています。独自のアルゴリズムにより、再生回数だけでなく、SNSでの拡散状況や話題性を総合的に判断し、いま本当に見るべき動画を厳選してお届けします。
+        </p>
+</section>
+</main>
+<!-- Footer Ad Placeholder -->
+<div class="max-w-[1200px] mx-auto px-margin-desktop mb-8 flex justify-center">
+<div class="w-full max-w-[728px] h-[90px] bg-card border border-border flex items-center justify-center rounded">
+<span class="text-xs text-sec-text tracking-widest uppercase">広告</span>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-surface w-full border-t border-border">
+<div class="max-w-[1200px] mx-auto py-12 px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-b border-border pb-8 mb-8">
+<div class="font-black text-2xl text-primary">
+                バズランク
+            </div>
+<div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+<a class="text-xs text-sec-text hover:text-primary transition-colors" href="#">運営情報</a>
+<a class="text-xs text-sec-text hover:text-primary transition-colors" href="#">利用規約</a>
+<a class="text-xs text-sec-text hover:text-primary transition-colors" href="#">プライバシーポリシー</a>
+<a class="text-xs text-sec-text hover:text-primary transition-colors" href="#">お問い合わせ</a>
+<a class="text-xs text-sec-text hover:text-primary transition-colors" href="#">広告掲載</a>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-sec-text/60">
+<p>© 2024 バズランク</p>
+<p>日本最大級のバズ動画トレンドサイト</p>
+</div>
+</div>
+</footer>
+<script>
+    // Micro-interactions
+    document.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('mousedown', () => {
+            btn.style.transform = 'scale(0.98)';
+        });
+        btn.addEventListener('mouseup', () => {
+            btn.style.transform = 'scale(1)';
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'scale(1)';
+        });
+    });
+</script>
+</body></html>
