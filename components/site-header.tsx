@@ -61,7 +61,9 @@ export default function SiteHeader() {
               placeholder="動画やチャンネルを検索"
               type="text"
             />
-            <button className="absolute right-3 top-1/2 -translate-y-1/2 text-sec-text hover:text-primary transition-colors">
+            <button
+              type="button"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-sec-text hover:text-primary transition-colors">
               <span className="text-lg">検索</span>
             </button>
           </div>
