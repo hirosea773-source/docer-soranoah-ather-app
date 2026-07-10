@@ -22,7 +22,7 @@ export default function SiteHeader() {
     className="h-8 w-auto max-w-[180px] object-contain sm:h-10 sm:max-w-[260px] md:h-14 md:max-w-[360px] lg:h-16 lg:max-w-[440px]"
   />
 </Link>
-        <div className="min-w-0 flex-1 items-center justify-end md:flex"> {/* classNameを修正 */}
+        <div className="min-w-0 flex-1 items-center justify-end md:flex">
           <div className="hidden md:flex items-center space-x-6">
             <a
               className="text-primary font-bold border-b-2 border-primary pb-1 text-sm"
