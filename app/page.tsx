@@ -32,7 +32,7 @@ export default function Home() {
             <li>
               <span>＞</span>
             </li>
-            <li className="text-text">急上昇</li>
+            <li className="text-text">人気動画</li>
           </ol>
         </nav>
 
