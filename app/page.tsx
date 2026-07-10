@@ -47,7 +47,7 @@ export default function Home() {
                 今日のバズ動画ランキング
               </h1>
               <p className="text-body-lg text-sec-text max-w-2xl">
-                いま話題の動画を、再生数・注目度・拡散性をもとに毎日更新。
+                YouTube APIで取得した人気動画を、再生数などの公開情報をもとに毎日更新。
               </p>
             </div>
             <div className="flex flex-col items-start md:items-end text-xs text-sec-text space-y-1">
