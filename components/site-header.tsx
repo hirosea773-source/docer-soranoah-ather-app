@@ -28,7 +28,7 @@ export default function SiteHeader() {
               className="text-primary font-bold border-b-2 border-primary pb-1 text-sm"
               href="#"
             >
-              急上昇
+              人気動画
             </a>
             <a
               className="text-sec-text hover:text-primary transition-colors duration-200 text-sm"
