@@ -56,3 +56,4 @@ node_modules/
 
 # OpenCode local settings
 opencode.json
+backups/
