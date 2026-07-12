@@ -69,7 +69,7 @@ export default function SiteHeader() {
             </button>
           </div>
           <div className="md:hidden ml-auto">
-            <button className="text-sec-text hover:text-sky-300 transition-colors p-2">
+            <button className="text-sky-300 hover:text-white transition-colors p-2">
               <span className="text-lg">検索</span>
             </button>
           </div>
