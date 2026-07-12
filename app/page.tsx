@@ -51,7 +51,6 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col items-start md:items-end text-xs text-sec-text space-y-1">
-              <p>最終更新：2026年5月25日 12:00</p>
               <p>集計動画：50件</p>
             </div>
           </div>
