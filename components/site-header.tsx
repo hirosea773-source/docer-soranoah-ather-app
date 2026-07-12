@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function SiteHeader() {
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-neutral-800 bg-neutral-950">
+    <header className="fixed top-0 z-50 w-full border-b border-[#174A73] bg-[#071A33]">
       <nav className="mx-auto flex h-20 w-full max-w-[1200px] items-center gap-3 px-4 sm:px-5 md:px-6">
         <Link
   href="/"
@@ -25,31 +25,31 @@ export default function SiteHeader() {
         <div className="min-w-0 flex-1 items-center justify-end md:flex">
           <div className="hidden md:flex items-center space-x-6">
             <a
-              className="text-primary font-bold border-b-2 border-primary pb-1 text-sm"
+              className="text-sky-300 font-bold border-b-2 border-sky-300 pb-1 text-sm"
               href="#"
             >
               人気動画
             </a>
             <a
-              className="text-sec-text hover:text-primary transition-colors duration-200 text-sm"
+              className="text-slate-200 hover:text-sky-300 transition-colors duration-200 text-sm"
               href="#"
             >
               音楽
             </a>
             <a
-              className="text-sec-text hover:text-primary transition-colors duration-200 text-sm"
+              className="text-slate-200 hover:text-sky-300 transition-colors duration-200 text-sm"
               href="#"
             >
               ゲーム
             </a>
             <a
-              className="text-sec-text hover:text-primary transition-colors duration-200 text-sm"
+              className="text-slate-200 hover:text-sky-300 transition-colors duration-200 text-sm"
               href="#"
             >
               テック
             </a>
             <a
-              className="text-sec-text hover:text-primary transition-colors duration-200 text-sm"
+              className="text-slate-200 hover:text-sky-300 transition-colors duration-200 text-sm"
               href="#"
             >
               ニュース
@@ -63,13 +63,13 @@ export default function SiteHeader() {
             />
             <button
               type="button"
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-sec-text hover:text-primary transition-colors"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-sec-text hover:text-sky-300 transition-colors"
             >
               <span className="text-lg">検索</span>
             </button>
           </div>
           <div className="md:hidden ml-auto">
-            <button className="text-sec-text hover:text-primary transition-colors p-2">
+            <button className="text-sec-text hover:text-sky-300 transition-colors p-2">
               <span className="text-lg">検索</span>
             </button>
           </div>
