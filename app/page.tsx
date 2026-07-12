@@ -70,7 +70,7 @@ export default function Home() {
               <div className="relative aspect-[16/9] bg-card overflow-hidden rounded border border-border">
                 {videoThumbnailPlaceholder}
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
-                <div className="absolute top-0 left-0 bg-primary px-3 py-1.5 flex items-center justify-center">
+                <div className="absolute top-0 left-0 bg-[#D9363E] px-3 py-1.5 flex items-center justify-center">
                   <span className="font-black text-lg text-white italic">01</span>
                 </div>
               </div>
@@ -93,7 +93,7 @@ export default function Home() {
               <div className="relative aspect-[16/9] bg-card overflow-hidden rounded border border-border">
                 {videoThumbnailPlaceholder}
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
-                <div className="absolute top-0 left-0 bg-primary px-3 py-1.5 flex items-center justify-center">
+                <div className="absolute top-0 left-0 bg-[#D9363E] px-3 py-1.5 flex items-center justify-center">
                   <span className="font-black text-lg text-white italic">02</span>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export default function Home() {
               <div className="relative aspect-[16/9] bg-card overflow-hidden rounded border border-border">
                 {videoThumbnailPlaceholder}
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
-                <div className="absolute top-0 left-0 bg-primary px-3 py-1.5 flex items-center justify-center">
+                <div className="absolute top-0 left-0 bg-[#D9363E] px-3 py-1.5 flex items-center justify-center">
                   <span className="font-black text-lg text-white italic">03</span>
                 </div>
               </div>
