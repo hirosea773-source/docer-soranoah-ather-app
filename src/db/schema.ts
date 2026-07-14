@@ -17,3 +17,25 @@ export const todos = pgTable("todos", {
     withTimezone: true,
   }).defaultNow(),
 });
+
+export const videos = pgTable("videos", {
+  id: uuid("id").defaultRandom().primaryKey(),
+  youtubeVideoId: text("youtube_video_id").notNull().unique(),
+  title: text("title").notNull(),
+  channelTitle: text("channel_title").notNull(),
+  thumbnailUrl: text("thumbnail_url").notNull(),
+  publishedAt: timestamp("published_at", {
+    withTimezone: true,
+  }).notNull(),
+  duration: text("duration").notNull(),
+  createdAt: timestamp("created_at", {
+    withTimezone: true,
+  })
+    .defaultNow()
+    .notNull(),
+  updatedAt: timestamp("updated_at", {
+    withTimezone: true,
+  })
+    .defaultNow()
+    .notNull(),
+});
