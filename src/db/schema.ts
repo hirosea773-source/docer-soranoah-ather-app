@@ -1,4 +1,5 @@
-import { bigint, boolean, index, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
+import { bigint, boolean, check, index, integer, pgTable, text, timestamp, uuid, numeric, unique } from "drizzle-orm/pg-core";
+import { sql } from "drizzle-orm";
 
 export const todos = pgTable("todos", {
   id: uuid("id").defaultRandom().primaryKey(),
@@ -84,6 +85,38 @@ export const rankingSnapshots = pgTable(
       table.regionCode,
       table.categoryId,
       table.rankingDate.desc(),
+    ),
+  ],
+);
+
+export const rankingItems = pgTable(
+  "ranking_items",
+  {
+    id: uuid("id").defaultRandom().primaryKey(),
+    snapshotId: uuid("snapshot_id")
+      .notNull()
+      .references(() => rankingSnapshots.id, { onDelete: "cascade" }),
+    videoId: uuid("video_id")
+      .notNull()
+      .references(() => videos.id, { onDelete: "cascade" }),
+    rank: integer("rank").notNull(),
+    score: numeric("score", {
+      precision: 20,
+      scale: 6,
+    }),
+  },
+  (table) => [
+    check(
+      "ranking_items_rank_positive_check",
+      sql`${table.rank} > 0`,
+    ),
+    unique("ranking_items_snapshot_video_unique").on(
+      table.snapshotId,
+      table.videoId,
+    ),
+    unique("ranking_items_snapshot_rank_unique").on(
+      table.snapshotId,
+      table.rank,
     ),
   ],
 );
