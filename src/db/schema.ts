@@ -63,3 +63,27 @@ export const videoStats = pgTable(
     ),
   ],
 );
+
+export const rankingSnapshots = pgTable(
+  "ranking_snapshots",
+  {
+    id: uuid("id").defaultRandom().primaryKey(),
+    regionCode: text("region_code").notNull(),
+    categoryId: text("category_id"),
+    rankingDate: timestamp("ranking_date", {
+      withTimezone: true,
+    }).notNull(),
+    createdAt: timestamp("created_at", {
+      withTimezone: true,
+    })
+      .defaultNow()
+      .notNull(),
+  },
+  (table) => [
+    index("ranking_snapshots_region_category_date_idx").on(
+      table.regionCode,
+      table.categoryId,
+      table.rankingDate.desc(),
+    ),
+  ],
+);
