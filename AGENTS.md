@@ -1,6 +1,6 @@
 # AGENTS.md
 
-## OpenCode Rules
+## AI Agent Rules
 
 - デフォルトはレビューのみ
 - ファイル変更前に確認を取る

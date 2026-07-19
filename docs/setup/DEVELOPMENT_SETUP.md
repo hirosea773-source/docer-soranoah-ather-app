@@ -8,9 +8,12 @@
 
 - VS Code Dev Container で作業する
 - Node.js 22 を使用する
-- Supabase Local を使用する
-- Playwright で E2E テストを実行する
-- Aider は自動コミットOFFで使用する
+- Next.js 16 でUIを開発し、Vercel Previewで確認する
+- Static Exportした `out/` をXserverへ配置する
+- 本番の動的処理はPHP 8.3、データベースはMariaDBを使用する
+- YouTube Data APIはXserver Cronから実行し、通常ページアクセス時には呼び出さない
+- Playwright でUI表示テストを実行する
+- Codex・Clineによるcommitは行わない
 
 ## 初回セットアップ
 

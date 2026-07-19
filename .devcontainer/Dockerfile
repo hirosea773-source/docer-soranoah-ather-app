@@ -19,19 +19,23 @@ RUN cp /root/.local/bin/uv /usr/local/bin/uv
 
 # PATHにuvを追加（すべてのユーザーが利用できるように）
 ENV PATH="/usr/local/bin:${PATH}"
-
-# Aiderのインストールはnodeユーザーで行う
-USER node
-# nodeユーザーのPATHに~/.local/binを追加（uv tool installのターゲット）
-ENV PATH="/home/node/.local/bin:${PATH}"
-RUN uv tool install --python 3.12 aider-chat
-
+# Codex CLIをイメージへ固定してインストールする
+RUN npm install -g @openai/codex
 # Playwrightとその依存ライブラリのインストールはrootユーザーで行う
 USER root
 RUN npx playwright install-deps chromium
 RUN npx playwright install chromium
 
-RUN chown -R node:node /home/node/.cache
+RUN mkdir -p /home/node/.cache \
+    && chown -R node:node /home/node/.cache
+
+# Cline用named volumeのマウント先を事前作成する
+RUN mkdir -p \
+    /home/node/.cline \
+    /home/node/.vscode-server/data/User/globalStorage/saoudrizwan.claude-dev \
+    && chown -R node:node \
+    /home/node/.cline \
+    /home/node/.vscode-server
 
 WORKDIR /workspaces/app
 USER node

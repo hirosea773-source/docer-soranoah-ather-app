@@ -48,12 +48,5 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
-# Aider
-.aider.chat.history.md
-.aider.input.history
-.aider.tags.cache.v4/
-.aider*
 
-# OpenCode local settings
-opencode.json
 backups/

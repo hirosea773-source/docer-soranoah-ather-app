@@ -22,7 +22,9 @@
 
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
-    "source=playwright-cache,target=/home/node/.cache/ms-playwright,type=volume"
+    "source=playwright-cache,target=/home/node/.cache/ms-playwright,type=volume",
+    "source=cline-settings,target=/home/node/.cline,type=volume",
+    "source=cline-vscode-storage,target=/home/node/.vscode-server/data/User/globalStorage/saoudrizwan.claude-dev,type=volume"
   ],
 
   "customizations": {
@@ -41,7 +43,7 @@
     "GEMINI_API_KEY": "${localEnv:GEMINI_API_KEY}",
     "GOOGLE_GENERATIVE_AI_API_KEY": "${localEnv:GEMINI_API_KEY}"
   },
-  "postCreateCommand": "npm ci && npm i -g opencode-ai@latest",
+  "postCreateCommand": "npm ci",
   "portsAttributes": {
     "9323": {
       "label": "9322"
